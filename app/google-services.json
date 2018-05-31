@@ -1,0 +1,59 @@
+{
+  "project_info": {
+    "project_number": "416266736332",
+    "firebase_url": "https://smarthome-f50ea.firebaseio.com",
+    "project_id": "smarthome-f50ea",
+    "storage_bucket": "smarthome-f50ea.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:416266736332:android:7838ca57454c2dad",
+        "android_client_info": {
+          "package_name": "com.example.phuc.iot_smart_home_v2"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "416266736332-uudm6ke49jt9s92n4l01tr83a3o9l3bh.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.phuc.iot_smart_home_v2",
+            "certificate_hash": "2b3f5b8a92ad453b52620abde178d1bdd2701b1f"
+          }
+        },
+        {
+          "client_id": "416266736332-8ag10c27skva3j34hv8pj3uhpflo23qg.apps.googleusercontent.com",
+          "client_type": 3
+        },
+        {
+          "client_id": "416266736332-8ag10c27skva3j34hv8pj3uhpflo23qg.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAkueaSt9qtHSs2DVSbbwgMvRj8qtzVe50"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 2,
+          "other_platform_oauth_client": [
+            {
+              "client_id": "416266736332-8ag10c27skva3j34hv8pj3uhpflo23qg.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
