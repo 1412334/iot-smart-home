@@ -4,7 +4,40 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:paddingBottom="@dimen/activity_vertical_margin"
+    android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin"
+    android:background="@drawable/venice"
     tools:context=".activities.ControlActivity">
 
-    <Rec
+    <TextView
+        android:id="@+id/txtHello"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/hello"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentLeft="true"
+        android:textColor="@color/transparent_pw"/>
+
+    <TextView
+        android:id="@+id/username_dashboard"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/username_dashboard"
+        android:textColor="@color/white"
+        android:textStyle="bold|italic"
+        android:layout_below="@+id/txtHello"
+        android:layout_marginBottom="20dp"
+        android:textSize="@dimen/size_large"
+        />
+
+    <android.support.v7.widget.RecyclerView
+        android:id="@+id/cardView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/username_dashboard"
+        >
+
+    </android.support.v7.widget.RecyclerView>
 </RelativeLayout>

@@ -4,4 +4,6 @@
     <string name="password">Password</string>
     <string name="forgot_password">forgot your password?</string>
     <string name="create_account">create an account</string>
+    <string name="username_dashboard">Username</string>
+    <string name="hello">Hello</string>
 </resources>

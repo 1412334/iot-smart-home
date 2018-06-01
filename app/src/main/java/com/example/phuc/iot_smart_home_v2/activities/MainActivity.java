@@ -2,6 +2,7 @@ package com.example.phuc.iot_smart_home_v2.activities;
 
 import android.app.Activity;
 //import android.support.v7.app.AppCompatActivity;
+import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
@@ -67,6 +68,9 @@ public class MainActivity extends Activity {
                 String password = txtPassword.getText().toString();
                 userInfo = new User(userName, password);
                 Log.d("Info: ", userInfo.getUserName() + " + " + userInfo.getPassword());
+
+                Intent gotoDashboard = new Intent(v.getContext(), ControlActivity.class);
+                startActivity(gotoDashboard);
             }
         });
 

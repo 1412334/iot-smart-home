@@ -11,7 +11,8 @@
         android:theme="@style/AppTheme">
         <activity
             android:name=".activities.MainActivity"
-            android:screenOrientation="portrait">
+            android:screenOrientation="portrait"
+            android:noHistory="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -21,7 +22,10 @@
         <activity
             android:name=".activities.SignupActivity"
             android:screenOrientation="portrait" />
-        <activity android:name=".activities.ControlActivity"></activity>
+        <activity
+            android:name=".activities.ControlActivity">
+
+        </activity>
     </application>
 
 </manifest>
