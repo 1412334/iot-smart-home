@@ -1,5 +1,6 @@
 package com.example.phuc.iot_smart_home_v2.activities;
 
+import android.app.Activity;
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -16,7 +17,7 @@ import com.google.firebase.database.FirebaseDatabase;
 import butterknife.BindView;
 import butterknife.ButterKnife;
 
-public class SignupActivity extends AppCompatActivity {
+public class SignupActivity extends Activity {
 
     @BindView(R.id.txtUsername)
     TextView txtUserName;

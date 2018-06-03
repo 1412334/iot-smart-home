@@ -35,11 +35,20 @@
         android:layout_height="wrap_content"
         android:text="@string/electric"
         android:textSize="@dimen/size_large"
+        android:layout_marginBottom="@dimen/size_large"
         android:textStyle="italic"
         android:layout_below="@id/username_dashboard"
         android:textColor="@color/white"
         android:layout_centerHorizontal="true"/>
 
+    <com.anychart.anychart.AnyChartView
+        android:id="@+id/chart"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/chartTitle"
+        android:background="@drawable/info_env"
+        android:layout_alignParentBottom="true">
 
+    </com.anychart.anychart.AnyChartView>
 
 </RelativeLayout>

@@ -16,6 +16,7 @@ import android.support.v7.widget.RecyclerView;
 import android.util.Log;
 import android.view.View;
 import android.view.Window;
+import android.widget.Button;
 import android.widget.CompoundButton;
 import android.widget.ImageButton;
 import android.widget.SeekBar;
@@ -64,6 +65,9 @@ public class ControlActivity extends Activity {
 
     @BindView(R.id.fab)
     FloatingActionButton fab;
+
+    @BindView(R.id.btnIndex)
+    ImageButton btnIndex;
 
     ComponentAdapter mAdapter;
     ArrayList<Component> listComponents = new ArrayList<>();
@@ -169,6 +173,14 @@ public class ControlActivity extends Activity {
             }
         });
 
+        btnIndex.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent gotoIndex = new Intent(ControlActivity.this, IndexActivity.class);
+                startActivity(gotoIndex);
+            }
+        });
+
         homeRef.addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
@@ -207,7 +219,7 @@ public class ControlActivity extends Activity {
     private ComponentAdapter.ComponentAdapterListener adapterListener = new ComponentAdapter.ComponentAdapterListener() {
         @Override
         public void onItemClick(CardView item, Component comp, int position) {
-            Toast.makeText(getApplicationContext(), comp.getDescription() + "  " + position, Toast.LENGTH_LONG).show();
+            //Toast.makeText(getApplicationContext(), comp.getDescription() + "  " + position, Toast.LENGTH_LONG).show();
         }
 
         @Override

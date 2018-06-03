@@ -43,6 +43,17 @@
         android:adjustViewBounds="true"
         android:layout_margin="10dp"
         android:src="@drawable/signout" />
+    <ImageButton
+        android:id="@+id/btnIndex"
+        android:layout_width="@dimen/icon_size"
+        android:layout_height="@dimen/icon_size"
+        android:layout_toLeftOf="@+id/btnSetting"
+        android:layout_alignTop="@+id/txtHello"
+        android:background="@null"
+        android:scaleType="fitCenter"
+        android:adjustViewBounds="true"
+        android:layout_margin="10dp"
+        android:src="@drawable/chart" />
 
 
     

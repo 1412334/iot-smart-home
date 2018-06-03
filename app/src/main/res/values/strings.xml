@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">iot-smart-home-v2</string>
+    <string name="app_name">SmartyHome</string>
     <string name="signup">sign up</string>
     <string name="name">Name</string>
     <string name="homeid">home ID</string>
