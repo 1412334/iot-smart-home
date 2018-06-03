@@ -4,6 +4,7 @@
     <dimen name="space_normal">16dp</dimen>
     <dimen name="size_large">20sp</dimen>
     <dimen name="size_extra_large">30dp</dimen>
+    <dimen name="icon_size">40dp</dimen>
     <dimen name="size_normal">16sp</dimen>
     <dimen name="size_small">8dp</dimen>
     <dimen name="space_small">8dp</dimen>

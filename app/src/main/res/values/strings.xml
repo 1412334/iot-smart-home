@@ -1,9 +1,19 @@
 <resources>
     <string name="app_name">iot-smart-home-v2</string>
+    <string name="signup">sign up</string>
+    <string name="name">Name</string>
+    <string name="homeid">home ID</string>
     <string name="username">Username</string>
     <string name="password">Password</string>
     <string name="forgot_password">forgot your password?</string>
     <string name="create_account">create an account</string>
     <string name="username_dashboard">Username</string>
     <string name="hello">Hello</string>
+    <string name="temperature">Temperature</string>
+    <string name="humidity">Humidity</string>
+    <string name="degree">&#x2103;</string>
+    <string name="percent">%</string>
+    <string name="speech_prompt">Say something…</string>
+    <string name="speech_not_supported">Sorry! Your device doesn\'t support speech input</string>
+    <string name="electric">Chart of Electric Consumption in 7 days</string>
 </resources>

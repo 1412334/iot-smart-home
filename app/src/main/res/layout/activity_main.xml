@@ -66,11 +66,24 @@
 
     <Button
         android:id="@+id/btnForgotPassword"
-        android:layout_width="match_parent"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:textAllCaps="false"
         android:layout_alignParentBottom="true"
+        android:layout_alignParentLeft="true"
+        android:layout_marginLeft="20dp"
         android:text="@string/forgot_password"
+        android:background="@android:color/transparent"
+        android:textColor="@color/transparent_pw"/>
+    <Button
+        android:id="@+id/signup"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAllCaps="false"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentRight="true"
+        android:layout_marginLeft="20dp"
+        android:text="@string/signup"
         android:background="@android:color/transparent"
         android:textColor="@color/transparent_pw"/>
 

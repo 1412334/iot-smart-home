@@ -2,26 +2,35 @@ package com.example.phuc.iot_smart_home_v2.components;
 
 public class Component {
     private String id;
-    private String icon;
+    private String type;
     private int value;
     private String description;
     private int opacity;
+    private String homeID;
 
     public int getOpacity() {
         return opacity;
+    }
+
+    public String getHomeID() {
+        return homeID;
+    }
+
+    public void setHomeID(String homeID) {
+        this.homeID = homeID;
     }
 
     public void setOpacity(int opacity) {
         this.opacity = opacity;
     }
 
-    public Component(String id, String icon, int value, String description, int opacity) {
+    public Component(String id, String type, int value, String description, int opacity, String homeID) {
         this.id = id;
-        this.icon = icon;
+        this.type = type;
         this.value = value;
         this.description = description;
         this.opacity = opacity;
-
+        this.homeID = homeID;
     }
 
     public Component() {
@@ -36,12 +45,12 @@ public class Component {
         this.id = id;
     }
 
-    public String getIcon() {
-        return icon;
+    public String getType() {
+        return type;
     }
 
-    public void setIcon(String icon) {
-        this.icon = icon;
+    public void setType(String type) {
+        this.type = type;
     }
 
     public int getValue() {
@@ -62,6 +71,6 @@ public class Component {
 
     @Override
     public String toString() {
-        return id + " - " + value + " - " + description + " - " + icon;
+        return id + " - " + value + " - " + description + " - " + type;
     }
 }

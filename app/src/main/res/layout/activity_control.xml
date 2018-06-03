@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:new="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
@@ -32,12 +32,116 @@
         android:textSize="@dimen/size_large"
         />
 
+    <ImageButton
+        android:id="@+id/btnSetting"
+        android:layout_width="@dimen/icon_size"
+        android:layout_height="@dimen/icon_size"
+        android:layout_alignParentRight="true"
+        android:layout_alignTop="@+id/txtHello"
+        android:background="@null"
+        android:scaleType="fitCenter"
+        android:adjustViewBounds="true"
+        android:layout_margin="10dp"
+        android:src="@drawable/signout" />
+
+
+    
+    <RelativeLayout
+        android:id="@+id/temperature"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@android:color/transparent"
+        android:layout_marginLeft="10dp"
+        android:padding="10dp"
+        android:layout_below="@id/username_dashboard">
+
+        <ImageView
+            android:id="@+id/imgTemp"
+            android:layout_width="@dimen/size_extra_large"
+            android:layout_height="@dimen/size_extra_large"
+            android:src="@drawable/temperature"
+            />
+
+        <TextView
+            android:id="@+id/value_temp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="34"
+            android:textSize="70dp"
+            android:textColor="@color/white"
+            android:layout_toRightOf="@+id/imgTemp"
+            android:layout_alignParentTop="true"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/degree"
+            android:textColor="@color/white"
+            android:paddingTop="10dp"
+            android:layout_alignParentTop="true"
+            android:textSize="@dimen/size_extra_large"
+            android:layout_toRightOf="@id/value_temp"/>
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/humidity"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@android:color/transparent"
+        android:layout_marginLeft="10dp"
+        android:padding="10dp"
+        android:layout_below="@id/username_dashboard"
+        android:layout_alignParentRight="true">
+
+        <TextView
+            android:id="@+id/value_humi"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="34"
+            android:textSize="70dp"
+            android:textColor="@color/white"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentTop="true"/>
+
+        <TextView
+            android:id="@+id/percent"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/percent"
+            android:textColor="@color/white"
+            android:paddingTop="10dp"
+            android:layout_alignParentTop="true"
+            android:textSize="@dimen/size_extra_large"
+            android:layout_toRightOf="@id/value_humi"/>
+
+        <ImageView
+            android:layout_width="@dimen/size_extra_large"
+            android:layout_height="@dimen/size_extra_large"
+            android:src="@drawable/humidity"
+            android:layout_toRightOf="@id/percent"/>
+
+    </RelativeLayout>
+
     <android.support.v7.widget.RecyclerView
         android:id="@+id/cardView"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/username_dashboard"
+        android:layout_below="@+id/temperature"
         >
 
     </android.support.v7.widget.RecyclerView>
+
+    <android.support.design.widget.CoordinatorLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <android.support.design.widget.FloatingActionButton
+            android:id="@+id/fab"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="bottom|left"
+            android:layout_margin="@dimen/fab_margin"
+            android:src="@drawable/speech" />
+
+    </android.support.design.widget.CoordinatorLayout>
 </RelativeLayout>

@@ -41,9 +41,9 @@ public class ComponentAdapter extends RecyclerView.Adapter<ComponentAdapter.View
     }
 
     public interface ComponentAdapterListener {
-        void onItemClick(CardView item, Component comp);
-        void onToggleButton(CompoundButton toggle, boolean isChecked);
-        void onSlideSeekBar(SeekBar opacity,int progress, boolean fromUser);
+        void onItemClick(CardView item, Component comp, int position);
+        void onToggleButton(CompoundButton toggle, boolean isChecked, int position);
+        void onSlideSeekBar(SeekBar opacity,int progress, boolean fromUser, int position);
     }
 
     // Provide a reference to the views for each data item
@@ -72,9 +72,11 @@ public class ComponentAdapter extends RecyclerView.Adapter<ComponentAdapter.View
         CardView item;
 
         private Component comp;
+        private int position;
 
-        public void setComp(Component comp) {
+        public void setComp(Component comp, int position) {
             this.comp = comp;
+            this.position = position;
         }
 
         public ViewHolder(View itemView) {
@@ -85,7 +87,7 @@ public class ComponentAdapter extends RecyclerView.Adapter<ComponentAdapter.View
             opacity.setOnSeekBarChangeListener(new SeekBar.OnSeekBarChangeListener() {
                 @Override
                 public void onProgressChanged(SeekBar seekBar, int progress, boolean fromUser) {
-                    mListener.onSlideSeekBar(seekBar, progress, fromUser);
+                    mListener.onSlideSeekBar(seekBar, progress, fromUser, position);
                 }
 
                 @Override
@@ -102,12 +104,12 @@ public class ComponentAdapter extends RecyclerView.Adapter<ComponentAdapter.View
 
         @OnClick(R.id.item_cardview)
         public void onItemClick() {
-            mListener.onItemClick(item, this.comp);
+            mListener.onItemClick(item, this.comp, this.position);
         }
 
         @OnCheckedChanged(R.id.swControl)
         public void onToggleButton(CompoundButton button, boolean isChecked) {
-            mListener.onToggleButton(button, isChecked);
+            mListener.onToggleButton(button, isChecked, this.position);
         }
     }
 
@@ -128,17 +130,24 @@ public class ComponentAdapter extends RecyclerView.Adapter<ComponentAdapter.View
         // - replace the contents of the view with that elements
         Component component = listComponents.get(position);
 
-
-
-        if (listComponents.get(position).getIcon().equals("light")) {
-            holder.icon_component.setImageResource(R.drawable.idea);
-            holder.opacity.setProgress(component.getOpacity());
-            holder.toggle.setChecked(component.getValue() == 1);
-            holder.txtStatus.setText("" + component.getValue());
-            holder.txtDescription.setText(component.getDescription());
+        switch (component.getType()) {
+            case "light":
+                holder.icon_component.setImageResource(R.drawable.light);
+                holder.txtStatus.setText(component.getValue() == 1 ? "ON" : "OFF");
+                break;
+            case "fan":
+                holder.icon_component.setImageResource(R.drawable.fan);
+                holder.txtStatus.setText(component.getValue() == 1 ? "ON" : "OFF");
+            case "air-conditioner":
+                holder.icon_component.setImageResource(R.drawable.air_conditioner);
+                holder.txtStatus.setText(component.getValue() == 1 ? "ON" : "OFF");
         }
 
-        ((ViewHolder ) holder).setComp(listComponents.get(position));
+        holder.opacity.setProgress(component.getOpacity());
+        holder.toggle.setChecked(component.getValue() == 1);
+        holder.txtDescription.setText(component.getDescription());
+
+        ((ViewHolder ) holder).setComp(listComponents.get(position), position);
     }
 
     // Return the size of your dataset (invoked by the layout manager)
