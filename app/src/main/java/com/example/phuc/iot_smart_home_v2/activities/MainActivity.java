@@ -72,10 +72,6 @@ public class MainActivity extends Activity {
         ButterKnife.bind(this);
 
         GlobalSocket app = (GlobalSocket) getApplication();
-//        mSocket = app.getmSocket();
-//
-//        mSocket.connect();
-//        mSocket.on("userInfo", onRetrieveData);
 
         sharedPreferences = getSharedPreferences("dataLogin", MODE_PRIVATE);
 
@@ -169,28 +165,4 @@ public class MainActivity extends Activity {
             }
         });
     }
-
-//    private Emitter.Listener onRetrieveData = new Emitter.Listener() {
-//        @Override
-//        public void call(final Object... args) {
-//            runOnUiThread(new Runnable() {
-//                @Override
-//                public void run() {
-//                    JSONObject object = (JSONObject) args[0];
-//                    ObjectMapper mapper = new ObjectMapper();
-//
-//                    try {
-//                        userInfo = mapper.readValue(object.toString(), User.class);
-//                        if (userInfo.getUserName().equals("null")) {
-//                            Toast.makeText(getApplicationContext(), "Incorrect username or password",
-//                                    Toast.LENGTH_LONG).show();
-//                        } else {
-//                        }
-//                    } catch (IOException e) {
-//                        e.printStackTrace();
-//                    }
-//                }
-//            });
-//        }
-//    };
 }

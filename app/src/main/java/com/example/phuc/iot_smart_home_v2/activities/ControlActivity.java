@@ -94,45 +94,6 @@ public class ControlActivity extends Activity {
 
         txtUserNameDB.setText(sharedPreferences.getString("name", ""));
 
-//        homeRef.addChildEventListener(new ChildEventListener() {
-//            @Override
-//            public void onChildAdded(@NonNull DataSnapshot dataSnapshot, @Nullable String s) {
-//                Iterable<DataSnapshot> children = dataSnapshot.getChildren();
-//                int i = 0;
-//                ArrayList<Component> list_temp = new ArrayList<>();
-//                for (DataSnapshot user : children) {
-//                    Component c = user.getValue(Component.class);
-//                    if (!c.getType().equals("temperature") && !c.getType().equals("humidity")
-//                            && c.getHomeID().equals(userInfo.getHomeID())) {
-//                        list_temp.add(c);
-//                    }
-//                }
-//                if (list_temp.size() > listComponents.size()) {
-//                    listComponents.add(list_temp.get(list_temp.size() - 1));
-//                }
-//            }
-//
-//            @Override
-//            public void onChildChanged(@NonNull DataSnapshot dataSnapshot, @Nullable String s) {
-//
-//            }
-//
-//            @Override
-//            public void onChildRemoved(@NonNull DataSnapshot dataSnapshot) {
-//
-//            }
-//
-//            @Override
-//            public void onChildMoved(@NonNull DataSnapshot dataSnapshot, @Nullable String s) {
-//
-//            }
-//
-//            @Override
-//            public void onCancelled(@NonNull DatabaseError databaseError) {
-//
-//            }
-//        });
-
         fab.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
