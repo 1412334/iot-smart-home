@@ -16,4 +16,6 @@
     <string name="speech_prompt">Say something…</string>
     <string name="speech_not_supported">Sorry! Your device doesn\'t support speech input</string>
     <string name="electric">Chart of Electric Consumption in 7 days</string>
+    <string name="title_activity_remote_control">RemoteControlActivity</string>
+    <string name="tv_control">TV Remote Controller</string>
 </resources>

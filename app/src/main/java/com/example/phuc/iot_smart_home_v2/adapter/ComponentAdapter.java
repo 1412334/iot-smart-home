@@ -1,24 +1,33 @@
 package com.example.phuc.iot_smart_home_v2.adapter;
 
+import android.annotation.SuppressLint;
+import android.app.Activity;
 import android.content.Context;
+import android.content.Intent;
+import android.graphics.Point;
 import android.support.v7.widget.CardView;
 import android.support.v7.widget.RecyclerView;
+import android.util.Log;
 import android.view.LayoutInflater;
+import android.view.MotionEvent;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.CompoundButton;
-import android.widget.ImageView;
+import android.widget.ImageButton;
 import android.widget.ListView;
 import android.widget.SeekBar;
 import android.widget.Switch;
 import android.widget.TextView;
+import android.widget.Toast;
 import android.widget.ToggleButton;
 
 import com.cengalabs.flatui.views.FlatSeekBar;
 import com.example.phuc.iot_smart_home_v2.R;
+import com.example.phuc.iot_smart_home_v2.activities.RemoteControlActivity;
 import com.example.phuc.iot_smart_home_v2.components.Component;
 
 import java.util.ArrayList;
+import java.util.logging.Logger;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
@@ -28,13 +37,17 @@ import butterknife.OnClick;
 public class ComponentAdapter extends RecyclerView.Adapter<ComponentAdapter.ViewHolder> {
     ArrayList<Component> listComponents;
 
+    Activity activity;
+
     // Provide a suitable constructor (depends on the kind of dataset)
-    public ComponentAdapter(ArrayList<Component> listComponents) {
+    public ComponentAdapter(ArrayList<Component> listComponents, Activity activity) {
         this.listComponents = listComponents;
+        this.activity = activity;
     }
 
     // Configure Adapter Listener events
     private ComponentAdapterListener mListener;
+
 
     public void setComponentAdaptListener(ComponentAdapterListener mListener) {
         this.mListener = mListener;
@@ -54,7 +67,7 @@ public class ComponentAdapter extends RecyclerView.Adapter<ComponentAdapter.View
         private Context context;
 
         @BindView(R.id.icon_component)
-        ImageView icon_component;
+        ImageButton icon_component;
 
         @BindView(R.id.tvdesription)
         TextView txtDescription;
@@ -74,11 +87,14 @@ public class ComponentAdapter extends RecyclerView.Adapter<ComponentAdapter.View
         private Component comp;
         private int position;
 
+        Point p;
+
         public void setComp(Component comp, int position) {
             this.comp = comp;
             this.position = position;
         }
 
+        @SuppressLint("ClickableViewAccessibility")
         public ViewHolder(View itemView) {
             super(itemView);
             this.context = itemView.getContext();
@@ -98,6 +114,25 @@ public class ComponentAdapter extends RecyclerView.Adapter<ComponentAdapter.View
                 @Override
                 public void onStopTrackingTouch(SeekBar seekBar) {
 
+                }
+            });
+
+            // Set opacity-change animation on touching
+            icon_component.setOnTouchListener(new View.OnTouchListener() {
+                @Override
+                public boolean onTouch(View v, MotionEvent motionEvent) {
+                    switch (motionEvent.getAction()) {
+                        case MotionEvent.ACTION_DOWN: {
+                            v.setAlpha(0.5f);
+                            break;
+                        }
+                        case MotionEvent.ACTION_UP:
+                        case MotionEvent.ACTION_CANCEL: {
+                            v.setAlpha(1f);
+                            break;
+                        }
+                    }
+                    return false;
                 }
             });
         }
@@ -130,17 +165,30 @@ public class ComponentAdapter extends RecyclerView.Adapter<ComponentAdapter.View
         // - replace the contents of the view with that elements
         Component component = listComponents.get(position);
 
+        holder.txtStatus.setText(component.getValue() == 1 ? "ON" : "OFF");
         switch (component.getType()) {
             case "light":
                 holder.icon_component.setImageResource(R.drawable.light);
-                holder.txtStatus.setText(component.getValue() == 1 ? "ON" : "OFF");
                 break;
             case "fan":
                 holder.icon_component.setImageResource(R.drawable.fan);
-                holder.txtStatus.setText(component.getValue() == 1 ? "ON" : "OFF");
+                break;
             case "air-conditioner":
                 holder.icon_component.setImageResource(R.drawable.air_conditioner);
-                holder.txtStatus.setText(component.getValue() == 1 ? "ON" : "OFF");
+                break;
+            case "tv":
+                holder.icon_component.setImageResource(R.drawable.tv);
+                holder.icon_component.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View view) {
+                        Intent remoteControl = new Intent(activity, RemoteControlActivity.class);
+                        activity.startActivity(remoteControl);
+                    }
+                });
+                break;
+            default:
+                holder.icon_component.setImageResource(R.drawable.light);
+
         }
 
         holder.opacity.setProgress(component.getOpacity());

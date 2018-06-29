@@ -4,6 +4,7 @@ import android.app.Activity;
 import android.content.ActivityNotFoundException;
 import android.content.Intent;
 import android.content.SharedPreferences;
+import android.graphics.Point;
 import android.speech.RecognizerIntent;
 import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
@@ -78,6 +79,7 @@ public class ControlActivity extends Activity {
     FirebaseDatabase database = FirebaseDatabase.getInstance();
     DatabaseReference homeRef = database.getReference("component");
     DatabaseReference sensorRef = database.getReference("measure");
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -168,19 +170,17 @@ public class ControlActivity extends Activity {
         linearLayoutManager.setOrientation(LinearLayoutManager.VERTICAL);
         cardView.setLayoutManager(linearLayoutManager);
 
-
-        mAdapter = new ComponentAdapter(listComponents);
+        mAdapter = new ComponentAdapter(listComponents, this);
         mAdapter.setComponentAdaptListener(adapterListener);
         cardView.setAdapter(mAdapter);
         Toast.makeText(getApplicationContext(), "size: " + listComponents.size(), Toast.LENGTH_LONG).show();
-
 
     }
 
     private ComponentAdapter.ComponentAdapterListener adapterListener = new ComponentAdapter.ComponentAdapterListener() {
         @Override
         public void onItemClick(CardView item, Component comp, int position) {
-            //Toast.makeText(getApplicationContext(), comp.getDescription() + "  " + position, Toast.LENGTH_LONG).show();
+//            Toast.makeText(getApplicationContext(), comp.getDescription() + "  " + position, Toast.LENGTH_LONG).show();
         }
 
         @Override

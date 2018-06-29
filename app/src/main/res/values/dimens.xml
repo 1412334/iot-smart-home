@@ -13,5 +13,7 @@
     <dimen name="activity_vertical_margin">16dp</dimen>
     <dimen name="fab_margin">16dp</dimen>
     <dimen name="space_normal_x">12dp</dimen>
-    <dimen name="item">75dp</dimen>
+    <dimen name="item">80dp</dimen>
+    <dimen name="button">120dp</dimen>
+    <dimen name="button_margin">30dp</dimen>
 </resources>

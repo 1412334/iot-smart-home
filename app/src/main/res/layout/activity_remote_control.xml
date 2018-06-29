@@ -1,0 +1,145 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingBottom="@dimen/activity_vertical_margin"
+    android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin"
+    android:background="@drawable/venice"
+    android:orientation="vertical"
+    tools:context=".activities.RemoteControlActivity">
+
+    <TextView
+        android:id="@+id/txt_Hello"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/hello"
+        android:textColor="@color/transparent_pw"/>
+
+    <TextView
+        android:id="@+id/txt_username"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/username_dashboard"
+        android:textColor="@color/white"
+        android:textStyle="bold|italic"
+        android:layout_marginBottom="20dp"
+        android:textSize="@dimen/size_large"
+        />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/tv_control"
+        android:textColor="@color/white"
+        android:textStyle="bold"
+        android:layout_marginBottom="20dp"
+        android:textSize="@dimen/size_large"
+        />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:orientation="vertical">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingLeft="@dimen/button_margin"
+            android:layout_marginBottom="@dimen/space_normal">
+
+            <ImageButton
+                android:id="@+id/btn_power"
+                android:layout_width="@dimen/button"
+                android:layout_height="@dimen/button"
+                android:layout_alignParentLeft="true"
+                style="@style/RemoteButton"
+                android:padding="@dimen/space_large"
+                android:backgroundTint="@color/bg_gradient_end"
+                android:scaleType="fitCenter"
+                android:src="@drawable/power"
+                android:onClick="powerClick"/>
+
+            <Spinner
+                android:id="@+id/spinner"
+                style="@style/Widget.AppCompat.Spinner.DropDown"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:padding="@dimen/space_small"
+                android:background="@color/transparent_bg"
+                android:minWidth="100dp" />
+
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingLeft="@dimen/button_margin"
+            android:paddingRight="@dimen/button_margin"
+            >
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_alignParentLeft="true"
+                android:orientation="vertical">
+                <ImageButton
+                    android:id="@+id/btn_channel_up"
+                    android:layout_width="@dimen/button"
+                    android:layout_height="@dimen/button"
+                    android:backgroundTint="@color/light_blue"
+                    android:padding="@dimen/space_large"
+                    android:layout_marginBottom="@dimen/space_normal"
+                    style="@style/RemoteButton"
+                    android:scaleType="fitCenter"
+                    android:src="@drawable/up_channel"
+                    android:onClick="channelUpClick"/>
+                <ImageButton
+                    android:id="@+id/btn_channel_down"
+                    android:layout_width="@dimen/button"
+                    android:layout_height="@dimen/button"
+                    style="@style/RemoteButton"
+                    android:padding="@dimen/space_large"
+                    android:scaleType="fitCenter"
+                    android:backgroundTint="@color/light_blue"
+                    android:src="@drawable/down_channel"
+                    android:onClick="channelDownClick"/>
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_alignParentRight="true"
+                android:orientation="vertical">
+                <ImageButton
+                    android:id="@+id/btn_volume_up"
+                    android:layout_width="@dimen/button"
+                    android:layout_height="@dimen/button"
+                    android:layout_marginBottom="@dimen/space_normal"
+                    style="@style/RemoteButton"
+                    android:padding="@dimen/space_large"
+                    android:scaleType="fitCenter"
+                    android:backgroundTint="@color/light_blue"
+                    android:src="@drawable/plus"
+                    android:onClick="volumeUpClick"/>
+                <ImageButton
+                    android:id="@+id/btn_volume_down"
+                    android:layout_width="@dimen/button"
+                    android:layout_height="@dimen/button"
+                    style="@style/RemoteButton"
+                    android:padding="@dimen/space_large"
+                    android:scaleType="fitCenter"
+                    android:backgroundTint="@color/light_blue"
+                    android:src="@drawable/minus"
+                    android:onClick="volumeDownClick"/>
+            </LinearLayout>
+
+        </RelativeLayout>
+
+    </LinearLayout>
+
+</LinearLayout>
