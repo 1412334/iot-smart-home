@@ -12,12 +12,8 @@ import android.widget.Spinner;
 import android.widget.TextView;
 
 import com.example.phuc.iot_smart_home_v2.R;
-import com.google.firebase.database.DatabaseReference;
-import com.google.firebase.database.FirebaseDatabase;
 
-import butterknife.BindView;
-
-public class RemoteControlActivity extends AppCompatActivity {
+public class TVRemoteControlActivity extends AppCompatActivity {
 
     TextView txtName;
     Spinner spinner;
@@ -35,7 +31,7 @@ public class RemoteControlActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         this.requestWindowFeature(Window.FEATURE_NO_TITLE);
-        setContentView(R.layout.activity_remote_control);
+        setContentView(R.layout.activity_tv_remote_control);
 
         sharedPreferences = getSharedPreferences("dataLogin", MODE_PRIVATE);
 

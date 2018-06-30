@@ -29,8 +29,12 @@
         <activity android:name=".activities.IndexActivity" />
         <activity android:name=".activities.ComponentDetailActivity" />
         <activity
-            android:name=".activities.RemoteControlActivity"
+            android:name=".activities.TVRemoteControlActivity"
             android:label="@string/title_activity_remote_control"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name=".activities.ACRemoteControlActivity"
+            android:label="@string/title_activity_acremote_control"
             android:theme="@style/AppTheme.NoActionBar"></activity>
     </application>
 

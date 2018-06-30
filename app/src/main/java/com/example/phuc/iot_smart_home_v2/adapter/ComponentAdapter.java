@@ -7,27 +7,22 @@ import android.content.Intent;
 import android.graphics.Point;
 import android.support.v7.widget.CardView;
 import android.support.v7.widget.RecyclerView;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.MotionEvent;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.CompoundButton;
 import android.widget.ImageButton;
-import android.widget.ListView;
 import android.widget.SeekBar;
 import android.widget.Switch;
 import android.widget.TextView;
-import android.widget.Toast;
-import android.widget.ToggleButton;
 
-import com.cengalabs.flatui.views.FlatSeekBar;
 import com.example.phuc.iot_smart_home_v2.R;
-import com.example.phuc.iot_smart_home_v2.activities.RemoteControlActivity;
+import com.example.phuc.iot_smart_home_v2.activities.ACRemoteControlActivity;
+import com.example.phuc.iot_smart_home_v2.activities.TVRemoteControlActivity;
 import com.example.phuc.iot_smart_home_v2.components.Component;
 
 import java.util.ArrayList;
-import java.util.logging.Logger;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
@@ -175,13 +170,20 @@ public class ComponentAdapter extends RecyclerView.Adapter<ComponentAdapter.View
                 break;
             case "air-conditioner":
                 holder.icon_component.setImageResource(R.drawable.air_conditioner);
+                holder.icon_component.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View view) {
+                        Intent remoteControl = new Intent(activity, ACRemoteControlActivity.class);
+                        activity.startActivity(remoteControl);
+                    }
+                });
                 break;
             case "tv":
                 holder.icon_component.setImageResource(R.drawable.tv);
                 holder.icon_component.setOnClickListener(new View.OnClickListener() {
                     @Override
                     public void onClick(View view) {
-                        Intent remoteControl = new Intent(activity, RemoteControlActivity.class);
+                        Intent remoteControl = new Intent(activity, TVRemoteControlActivity.class);
                         activity.startActivity(remoteControl);
                     }
                 });

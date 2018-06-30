@@ -18,4 +18,12 @@
     <string name="electric">Chart of Electric Consumption in 7 days</string>
     <string name="title_activity_remote_control">RemoteControlActivity</string>
     <string name="tv_control">TV Remote Controller</string>
+    <string name="title_activity_acremote_control">ACRemoteControlActivity</string>
+    <string name="ac_control">Air Conditioner Remote Controller</string>
+    <string name="button_mode">MODE</string>
+    <string name="button_fan">FAN</string>
+    <string name="button_swing">SWING</string>
+    <string name="button_profile">PROFILE</string>
+
+
 </resources>

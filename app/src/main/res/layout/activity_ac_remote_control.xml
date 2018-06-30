@@ -1,0 +1,242 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingBottom="@dimen/activity_vertical_margin"
+    android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin"
+    android:background="@drawable/venice"
+    android:orientation="vertical"
+    tools:context=".activities.ACRemoteControlActivity">
+
+    <TextView
+        android:id="@+id/txt_Hello"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/hello"
+        android:textColor="@color/transparent_pw"/>
+
+    <TextView
+        android:id="@+id/txt_user"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/username_dashboard"
+        android:textColor="@color/white"
+        android:textStyle="bold|italic"
+        android:layout_marginBottom="20dp"
+        android:textSize="@dimen/size_large"
+        />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/ac_control"
+        android:textColor="@color/white"
+        android:textStyle="bold"
+        android:layout_marginBottom="20dp"
+        android:textSize="@dimen/size_large"
+        />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:orientation="vertical">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingLeft="@dimen/button_margin"
+            android:layout_marginBottom="@dimen/space_normal">
+
+            <ImageButton
+                android:id="@+id/btn_ac_power"
+                android:layout_width="@dimen/button_small"
+                android:layout_height="@dimen/button_small"
+                android:layout_alignParentLeft="true"
+                style="@style/RemoteButton"
+                android:padding="@dimen/space_large"
+                android:backgroundTint="@color/bg_gradient_end"
+                android:scaleType="fitCenter"
+                android:src="@drawable/power"
+                android:onClick="powerClick"/>
+
+            <Spinner
+                android:id="@+id/ac_spinner"
+                style="@style/Widget.AppCompat.Spinner.DropDown"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:padding="@dimen/space_small"
+                android:background="@color/transparent_bg"
+                android:minWidth="100dp" />
+
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:paddingLeft="@dimen/button_margin"
+            android:paddingRight="@dimen/button_margin">
+            <ImageButton
+                android:id="@+id/btn_temp_up"
+                android:layout_width="@dimen/button_small"
+                android:layout_height="@dimen/button_small"
+                android:layout_alignParentLeft="true"
+                android:backgroundTint="@color/light_blue"
+                android:padding="@dimen/space_large"
+                android:layout_marginBottom="@dimen/space_normal"
+                style="@style/RemoteButton"
+                android:scaleType="fitCenter"
+                android:src="@drawable/left_arrow"
+                android:onClick="temperatureUpClick"/>
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerHorizontal="true"
+                android:orientation="horizontal">
+                <TextView
+                    android:id="@+id/txt_temperature"
+                    android:layout_width="wrap_content"
+                    android:layout_gravity="center_vertical"
+                    android:layout_height="wrap_content"
+                    android:textSize="@dimen/size_large"
+                    android:textColor="@color/white"
+                    android:textStyle="bold"
+                    android:textAlignment="center" />
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical"
+                    android:textSize="@dimen/size_large"
+                    android:textColor="@color/white"
+                    android:textStyle="bold"
+                    android:textAlignment="center"
+                    android:text="@string/degree"/>
+            </LinearLayout>
+
+            <ImageButton
+                android:id="@+id/btn_temp_down"
+                android:layout_width="@dimen/button_small"
+                android:layout_height="@dimen/button_small"
+                android:layout_alignParentRight="true"
+                style="@style/RemoteButton"
+                android:padding="@dimen/space_large"
+                android:scaleType="fitCenter"
+                android:backgroundTint="@color/light_blue"
+                android:src="@drawable/right_arrow"
+                android:onClick="temperatureDownClick"/>
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingLeft="@dimen/button_margin"
+            android:paddingRight="@dimen/button_margin"
+            >
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_alignParentLeft="true"
+                android:orientation="vertical">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_marginBottom="@dimen/space_small"
+                    android:textSize="@dimen/size_normal"
+                    android:textColor="@color/white"
+                    android:textStyle="bold"
+                    android:textAlignment="center"
+                    android:text="@string/button_mode" />
+                <Button
+                    android:id="@+id/btn_mode"
+                    android:layout_width="@dimen/button_small_width"
+                    android:layout_height="@dimen/button_small"
+                    android:layout_marginBottom="@dimen/space_normal"
+                    style="@style/RemoteButton"
+                    android:padding="@dimen/space_small"
+                    android:scaleType="fitCenter"
+                    android:background="@color/light_blue"
+                    android:onClick="modeSwitch"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_marginTop="@dimen/space_small"
+                    android:layout_marginBottom="@dimen/space_small"
+                    android:textSize="@dimen/size_normal"
+                    android:textColor="@color/white"
+                    android:textStyle="bold"
+                    android:textAlignment="center"
+                    android:text="@string/button_fan" />
+                <Button
+                    android:id="@+id/btn_fan"
+                    android:layout_width="@dimen/button_small_width"
+                    android:layout_height="@dimen/button_small"
+                    style="@style/RemoteButton"
+                    android:padding="@dimen/space_small"
+                    android:scaleType="fitCenter"
+                    android:background="@color/light_blue"
+                    android:onClick="fanSwitch"/>
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_alignParentRight="true"
+                android:orientation="vertical">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_marginBottom="@dimen/space_small"
+                    android:textSize="@dimen/size_normal"
+                    android:textColor="@color/white"
+                    android:textStyle="bold"
+                    android:textAlignment="center"
+                    android:text="@string/button_swing" />
+                <Button
+                    android:id="@+id/btn_swing"
+                    android:layout_width="@dimen/button_small_width"
+                    android:layout_height="@dimen/button_small"
+                    android:layout_marginBottom="@dimen/space_normal"
+                    style="@style/RemoteButton"
+                    android:padding="@dimen/space_small"
+                    android:scaleType="fitCenter"
+                    android:background="@color/light_blue"
+                    android:onClick="swingSwitch"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_marginTop="@dimen/space_small"
+                    android:layout_marginBottom="@dimen/space_small"
+                    android:textSize="@dimen/size_normal"
+                    android:textColor="@color/white"
+                    android:textStyle="bold"
+                    android:textAlignment="center"
+                    android:text="@string/button_profile" />
+                <Button
+                    android:id="@+id/btn_profile"
+                    android:layout_width="@dimen/button_small_width"
+                    android:layout_height="@dimen/button_small"
+                    style="@style/RemoteButton"
+                    android:padding="@dimen/space_small"
+                    android:scaleType="fitCenter"
+                    android:background="@color/light_blue"
+                    android:onClick="profileSwitch"/>
+            </LinearLayout>
+
+        </RelativeLayout>
+
+    </LinearLayout>
+
+</LinearLayout>
